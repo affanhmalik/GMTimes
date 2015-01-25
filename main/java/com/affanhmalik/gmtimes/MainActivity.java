@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    // Declare global vars
+    // Declare global variables
     ProgressBar loader;
     TextView resultBox;
     TextView fajrTime;
