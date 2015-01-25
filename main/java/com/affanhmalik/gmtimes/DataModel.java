@@ -12,7 +12,24 @@ public class DataModel {
     protected String asr;
     protected String maghrib;
     protected String isha;
+    protected String testKey;
+    protected String testValue;
 
+    public String getTestKey() {
+        return testKey;
+    }
+
+    public void setTestKey(String testKey) {
+        this.testKey = testKey;
+    }
+
+    public String getTestValue() {
+        return testValue;
+    }
+
+    public void setTestValue(String testValue) {
+        this.testValue = testValue;
+    }
 
     public void setFajr(String fajr){
         this.fajr = fajr;

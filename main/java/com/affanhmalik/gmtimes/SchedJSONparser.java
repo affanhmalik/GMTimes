@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -29,11 +30,22 @@ public class SchedJSONparser {
         JSONObject maghrib = times.getJSONObject(3);
         JSONObject isha = times.getJSONObject(4);
 
-        sched.setFajr(fajr.getString("fajr"));
+        // Testing new method to get dynamic key values
+        String[] one = getKeyValue(times.getJSONObject(0));
+        String oneKey = one[0];
+        String oneValue = one[1];
+
+
+
+
+
+//        sched.setFajr(fajr.getString("fajr"));
         sched.setZuhr(zuhr.getString("zuhr"));
         sched.setAsr(asr.getString("asr"));
         sched.setMaghrib(maghrib.getString("maghrib"));
         sched.setIsha(isha.getString("isha"));
+        sched.setTestKey(oneKey);
+        sched.setTestValue(oneValue);
 
         /*JSONArray times = new JSONArray(data.getString("date"));
 
@@ -51,4 +63,25 @@ public class SchedJSONparser {
 
         return sched;
     }
+
+    private static String[] getKeyValue(JSONObject obj) {
+
+        String[] keyval = new String[2];
+        Iterator<String> iter = obj.keys();
+        if (iter.hasNext()) {
+            String key = iter.next();
+            Log.i("Key","This is the key: " + key);
+            keyval[0] = key;
+            try {
+                String val = obj.getString(key);
+                keyval[1] = val;
+                Log.i("value","This is the value: " + val);
+            } catch (JSONException e) {
+                // Something went wrong!
+            }
+        }
+        return keyval;
+    }
+
+
 }

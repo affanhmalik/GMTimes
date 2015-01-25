@@ -29,6 +29,9 @@ public class MainActivity extends ActionBarActivity {
     DataModel sched;
     List<DataModel> prSchedule;
 
+    //Testing for a dynamic title string:
+    TextView fajrTitle;
+
     // Currently making calls to this URI (Mock API) for json data
     String test_server_uri = "http://private-e86d1-novella1.apiary-mock.com/login";
 
@@ -158,11 +161,23 @@ public class MainActivity extends ActionBarActivity {
             maghribTime = (TextView) findViewById(R.id.maghribTime);
             ishaTime = (TextView) findViewById(R.id.ishaTime);
 
-            fajrTime.setText(sched.getFajr());
+            //Testing for a dynamic title string:
+            fajrTitle = (TextView) findViewById(R.id.fajrTitle);
+
+
+            fajrTime.setText(sched.getTestValue());
+            fajrTitle.setText(sched.getTestKey());
+//            fajrTitle.setText("aa");
+            //fajrTime.setText("11");
+
+
+
+//            fajrTime.setText(sched.getFajr());
             zuhrTime.setText(sched.getZuhr());
             asrTime.setText(sched.getAsr());
             maghribTime.setText(sched.getMaghrib());
             ishaTime.setText(sched.getIsha());
+
 
 
 

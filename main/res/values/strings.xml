@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Guildford Musalla</string>
+    <string name="app_name">GM Times</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="mainpage_title">Guildford Islamic Cultural Centre</string>
